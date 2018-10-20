@@ -1,4 +1,41 @@
-$body-bg: #1b1d1c;
-$body-color: #ea1821;
+$body-bg: #efe8d8;
+$body-color: #ff4552;
 
 @import "../bootstrap/scss/bootstrap";
+
+.main-title {
+    font-size: $h3-font-size;
+    @include media-breakpoint-up(md) {
+        font-size: $h1-font-size;
+    }
+}
+.members {
+    @include media-breakpoint-down(sm) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .pr-md-6 {
+        padding-right: 5rem;
+    }
+    .pl-md-6 {
+        padding-left: 5rem;
+    }
+}
+
+.hero {
+    max-width: 100%;
+    background: #fff;
+    width: 300px;
+    height: 175px;
+    @include media-breakpoint-up(md) {
+        width: 480px;
+        height: 360px;
+    }
+    @include media-breakpoint-up(lg) {
+        width: 640px;
+        height: 480px;
+    }
+}

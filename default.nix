@@ -10,14 +10,12 @@ let
     baseName != ".gitignore" &&
     baseName != ".gitmodules" &&
     baseName != ".sass-cache";
-in {
-  site = pkgs.stdenv.mkDerivation rec {
-    name = "olomouc.dance";
-    src = builtins.filterSource filterSite ./.;
-    phases = "unpackPhase buildPhase";
-    buildPhase = ''
-      mkdir -p $out
-      cp -r ./* $out
-    '';
-  };
+in pkgs.stdenv.mkDerivation rec {
+  name = "olomouc.dance";
+  src = builtins.filterSource filterSite ./.;
+  phases = "unpackPhase buildPhase";
+  buildPhase = ''
+    mkdir -p $out
+    cp -r ./* $out
+  '';
 }

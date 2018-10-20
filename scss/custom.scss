@@ -3,6 +3,10 @@ $body-color: #ff4552;
 
 @import "../bootstrap/scss/bootstrap";
 
+body {
+    overflow-x: hidden;
+}
+
 .bg-image {
     position: absolute;
     bottom: 0;

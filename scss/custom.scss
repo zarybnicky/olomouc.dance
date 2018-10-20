@@ -3,16 +3,20 @@ $body-color: #ff4552;
 
 @import "../bootstrap/scss/bootstrap";
 
+.bg-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 75%;
+    object-fit: scale-down;
+    z-index: -1;
+    opacity: .5;
+}
+
 .main-title {
     font-size: $h3-font-size;
     @include media-breakpoint-up(md) {
         font-size: $h1-font-size;
-    }
-}
-.members {
-    @include media-breakpoint-down(sm) {
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }
 

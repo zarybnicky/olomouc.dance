@@ -1,8 +1,8 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import ./nix {} }:
 let
   filterSite = path: _:
     let baseName = baseNameOf (toString path); in
-    baseName != "bootstrap" &&
+    baseName != "nix" &&
     baseName != "scss" &&
     baseName != "default.nix" &&
     baseName != "result" &&

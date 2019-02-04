@@ -1,49 +1,71 @@
-$body-bg: #efe8d8;
-$body-color: #ff4552;
+$body-bg: #000;
+$body-color: #ff312f;
 
 @import "../bootstrap/scss/bootstrap";
 
-body {
-    overflow-x: hidden;
+html, body, main {
+    height: 100%;
+    width: 100%;
 }
 
-.bg-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-width: 75%;
-    object-fit: scale-down;
-    z-index: -1;
-    opacity: .5;
+main {
+    display: flex;
+    flex-direction: column;
 }
 
-.main-title {
-    font-size: $h3-font-size;
-    @include media-breakpoint-up(md) {
-        font-size: $h1-font-size;
+header {
+    position: relative;
+    background-image: url('/img/olomouc.png');
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    min-height: 100px;
+    h1 {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        margin-bottom: 0;
     }
 }
 
-@include media-breakpoint-up(md) {
-    .pr-md-6 {
-        padding-right: 5rem;
-    }
-    .pl-md-6 {
-        padding-left: 5rem;
-    }
-}
+.items {
+    flex-grow: 1;
 
-.hero {
-    max-width: 100%;
-    background: #fff;
-    width: 300px;
-    height: 175px;
-    @include media-breakpoint-up(md) {
-        width: 480px;
-        height: 360px;
-    }
-    @include media-breakpoint-up(lg) {
-        width: 640px;
-        height: 480px;
+    & > div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0; right: 0;
+            top: 0; bottom: 0;
+            background-color: rgba(0,0,0,0.3);
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+        &:hover::before {
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        h2, h3 {
+            margin-bottom: 0;
+            z-index: 1;
+        }
+        h2 {
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: white;
+        }
     }
 }
